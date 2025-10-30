@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!--<PublishReadyToRun>true</PublishReadyToRun>-->
+    <!--<PublishReadyToRunComposite>true</PublishReadyToRunComposite>-->
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\.info\MetrisDesktopAssemblyInfo.cs" Link="Properties\MetrisDesktopAssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.13.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.3" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.65.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.1.2" />
+    <PackageReference Include="MimeKit" Version="4.7.1" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="6.0.4" />
+    <PackageReference Include="Refit" Version="7.2.22" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="7.2.22" />
+    <PackageReference Include="Riok.Mapperly" Version="3.3.0" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.15.0.120848">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="8.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+    <PackageReference Include="System.Text.Json" Version="9.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Metris.Authentication.Common\Metris.Authentication.Common.csproj" />
+    <ProjectReference Include="..\Metris.Email.Client\Metris.Email.Client.csproj" />
+    <ProjectReference Include="..\Metris.HTMLTools\Metris.HTMLTools.csproj" />
+    <ProjectReference Include="..\Metris.Service.Extensions\Metris.Service.Extensions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Metris.Domain.Cipher">
+      <HintPath>..\lib\Intellilock\NetStandard\Metris.Domain.Cipher_Locked\Metris.Domain.Cipher.dll</HintPath>
+    </Reference>
+    <Reference Include="Metris.Domain.Common">
+      <HintPath>..\lib\Metris\netstandard2.0\Metris.Domain.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Metris.Domain.Interface">
+      <HintPath>..\lib\Metris\netstandard2.0\Metris.Domain.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Metris.Infra">
+      <HintPath>..\lib\Metris\netstandard2.0\Metris.Infra.dll</HintPath>
+    </Reference>
+    <Reference Include="Opp.Service.Shared.Core">
+      <HintPath>..\lib\Metris\netstandard2.0\Opp.Service.Shared.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OppSharedResources">
+      <HintPath>..\lib\Metris\netstandard2.0\OppSharedResources.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\*.html" />
+  </ItemGroup>
+</Project>
